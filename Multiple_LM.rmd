@@ -1,0 +1,23 @@
+---
+title: "MultipleRegress"
+author: "Dr K"
+date: "November 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## make a multiple regression model predicting LENGTH, start with full model
+
+```{r}
+bears <- read.csv(file="BEARS.csv",header = TRUE)
+```
+
+##Model LENGTH ~ .     ("." is shorthand for all variables )
+
+```{r}
+fullup <- lm(LENGTH~ .,data=bears)
+summary.lm(fullup)
+```
