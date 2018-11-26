@@ -1,0 +1,24 @@
+---
+title: "Logistic Regression Donner Party"
+author: "Dr K"
+date: "November 19, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+require(tigerstats)
+require(Sleuth2)
+donner <- case2001
+```
+
+## make a simple barchart to see if sex might play a role  
+
+
+```{r}
+barchartGC(~Status + Sex, data=donner)
+chisqtestGC(~Status + Sex, data=donner)
+plot(Age~Status,data=donner,main="survive v.s. age")
+t.test(Age~Status,data=donner)
+```
